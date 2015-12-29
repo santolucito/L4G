@@ -1,0 +1,15 @@
+<template name="news">
+  <ul>
+     {{#each articles}}
+       {{> article }}
+     {{/each}}
+  </ul>
+</template>
+
+<template name="article">
+  <li class="title-message">
+    <h3>{{ title }} </h3>
+    <div class="cite">{{ source }} - {{ getDate }}</div>
+    <a href="{{link}}">{{getContent}}</a>
+  </li>
+</template>

@@ -1,2 +1,2 @@
-# L4G
-thing with fred
+# fredNews
+College news aggregator
