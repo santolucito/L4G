@@ -19,6 +19,11 @@ Template.join.events({
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     var confirm = template.$('[name=confirm]').val();
+    var roleButtons = $('input[type=radio]:checked')
+    var role = '';
+    if (roleButtons.length==1){
+      role = roleButtons[0].id
+    }
 
     var errors = {};
 
@@ -34,6 +39,10 @@ Template.join.events({
       errors.confirm = 'Please confirm your password';
     }
 
+    if (role == '') {
+      errors.role = 'Please select a role';
+    }
+
     Session.set(ERRORS_KEY, errors);
     if (_.keys(errors).length) {
       return;
@@ -41,7 +50,8 @@ Template.join.events({
 
     Accounts.createUser({
       email: email,
-      password: password
+      password: password,
+      role: role
     }, function(error) {
       if (error) {
         return Session.set(ERRORS_KEY, {'none': error.reason});
