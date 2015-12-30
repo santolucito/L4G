@@ -1,4 +1,5 @@
 var SEARCH_RESULTS = "search_results"
+Session.setDefault(SEARCH_RESULTS, "");
 
 Template.search.helpers({
   investors:function(){

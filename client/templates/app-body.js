@@ -4,13 +4,9 @@ Session.setDefault(MENU_KEY, false);
 var USER_MENU_KEY = 'userMenuOpen';
 Session.setDefault(USER_MENU_KEY, false);
 
-var SHOW_CONNECTION_ISSUE_KEY = 'showConnectionIssue';
-Session.setDefault(SHOW_CONNECTION_ISSUE_KEY, false);
-
 var SOURCE_SELECT = 'sourceSelect';
 Session.setDefault(SOURCE_SELECT, "");
 
-var CONNECTION_ISSUE_TIMEOUT = 5000;
 
 Meteor.startup(function () {
   // set up a swipe left / right handler
@@ -24,15 +20,7 @@ Meteor.startup(function () {
     preventDefaultEvents: false
   });
 
-  // Only show the connection error box if it has been 5 seconds since
-  // the app started
-  setTimeout(function () {
-    // Launch screen handle created in lib/router.js
-    dataReadyHold.release();
 
-    // Show the connection error box
-    Session.set(SHOW_CONNECTION_ISSUE_KEY, true);
-  }, CONNECTION_ISSUE_TIMEOUT);
 });
 
 
@@ -59,13 +47,7 @@ Template.appBody.helpers({
   sources: function() {
     return Sources.find();
   },
-  connected: function() {
-    if (Session.get(SHOW_CONNECTION_ISSUE_KEY)) {
-      return Meteor.status().connected;
-    } else {
-      return true;
-    }
-  },
+
   ofInterest:function(){
     return ofInterest();
   }
