@@ -49,7 +49,7 @@ Template.join.events({
     }
 
     var profile = {role:role}
-    
+
     Accounts.createUser({
       email: email,
       password: password,
@@ -59,7 +59,7 @@ Template.join.events({
         return Session.set(ERRORS_KEY, {'none': error.reason});
       }
 
-      Router.go('news');
+      Router.go('/');
     });
   }
 });

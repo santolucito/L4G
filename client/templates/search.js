@@ -2,14 +2,17 @@ var SEARCH_RESULTS = "search_results"
 
 Template.search.helpers({
   investors:function(){
-
-    return Meteor.users.find({"profile.role": 'investor'})
-  },
-  students:function(){
-    Meteor.call("getUsers",function(e,r){
+    var query = {"profile.role": 'investor'}
+    Meteor.call("getUsers",query,function(e,r){
       Session.set(SEARCH_RESULTS,r)
     })
-    console.log(Session.get(SEARCH_RESULTS));
+    return Session.get(SEARCH_RESULTS)
+  },
+  students:function(){
+    var query = {"profile.role": 'student'}
+    Meteor.call("getUsers",query,function(e,r){
+      Session.set(SEARCH_RESULTS,r)
+    })
     return Session.get(SEARCH_RESULTS)
 
   },
@@ -21,7 +24,15 @@ Template.search.helpers({
 
 Template.student.helpers({
   username:function(){
-    this.email;
+    console.log(this.emails[0].address);
+    return this.emails[0].address;
+  }
+})
+
+Template.investor.helpers({
+  username:function(){
+    console.log(this.emails[0].address);
+    return this.emails[0].address;
   }
 })
 

@@ -1,5 +1,8 @@
 <template name="search">
 
+<div class="container-fluid" style="margin:10px">
+  <div class="row">
+
   <h2>Search for a {{ofInterest}}, then reach out</h2>
 
   {{#if isInvestor}}
@@ -11,21 +14,25 @@
   {{/if}}
 
   {{#if isStudent}}
-  <ul>
+  <ul class="list-group">
   {{#each investors}}
     {{> investor }}
   {{/each}}
   </ul>
   {{/if}}
 
+</div>
+</div>
 </template>
 
 <template name="student">
-  <li>
+  <li class="list-group-item">
     {{ username }} needs money
   </li>
 </template>
 
 <template name="investor">
-
+  <li class="list-group-item">
+    {{ username }} has money
+  </li>
 </template>

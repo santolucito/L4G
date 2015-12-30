@@ -1,6 +1,5 @@
 Meteor.methods({
-  getUsers:function(){
-    console.log(Meteor.users.find().fetch());
-    return Meteor.users.find().fetch()
+  getUsers:function(query){
+    return Meteor.users.find(query).fetch()
   }
 })
