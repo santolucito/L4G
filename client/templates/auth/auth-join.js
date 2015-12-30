@@ -19,6 +19,8 @@ Template.join.events({
     var email = template.$('[name=email]').val();
     var password = template.$('[name=password]').val();
     var confirm = template.$('[name=confirm]').val();
+    var firstName = template.$('[name=firstName]').val()
+    var lastName = template.$('[name=lasttName]').val()
     var roleButtons = $('input[type=radio]:checked')
     var role = '';
     if (roleButtons.length==1){
@@ -42,13 +44,19 @@ Template.join.events({
     if (role == '') {
       errors.role = 'Please select a role';
     }
+    if (!/^[a-zA-Z]*$/.test(firstName) && !/^[a-zA-Z]*$/.test(firstName)) {
+      errors.role = 'Please enter a name with characters from the set [a-zA-Z]';
+    }
 
     Session.set(ERRORS_KEY, errors);
     if (_.keys(errors).length) {
       return;
     }
 
-    var profile = {role:role}
+    var profile =
+      {role:role
+      ,firstName:firstName
+      ,lastName:lastName}
 
     Accounts.createUser({
       email: email,
@@ -58,7 +66,6 @@ Template.join.events({
       if (error) {
         return Session.set(ERRORS_KEY, {'none': error.reason});
       }
-
       Router.go('/');
     });
   }
