@@ -1,0 +1,31 @@
+<template name="search">
+
+  <h2>Search for a {{ofInterest}}, then reach out</h2>
+
+  {{#if isInvestor}}
+  <ul>
+    {{#each students}}
+      {{> student }}
+    {{/each}}
+  </ul>
+  {{/if}}
+
+  {{#if isStudent}}
+  <ul>
+  {{#each investors}}
+    {{> investor }}
+  {{/each}}
+  </ul>
+  {{/if}}
+
+</template>
+
+<template name="student">
+  <li>
+    {{ username }} needs money
+  </li>
+</template>
+
+<template name="investor">
+
+</template>

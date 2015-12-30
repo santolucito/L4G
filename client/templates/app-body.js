@@ -67,14 +67,8 @@ Template.appBody.helpers({
       return true;
     }
   },
-  thing : function() {
-    if (Meteor.user().profile.role == 'student'){
-      return 'Loan'
-    }
-    if (Meteor.user().profile.role == 'investor') {
-      return 'Student'
-    }
-    return ''
+  ofInterest:function(){
+    return ofInterest();
   }
 
 });
