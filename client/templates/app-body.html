@@ -4,17 +4,7 @@
     <section id="menu">
       {{#if currentUser}}
         <div class="btns-group-vertical">
-          <a href="#" class="js-user-menu btn-secondary">
-            {{#if userMenuOpen}}
-              <span class="icon-arrow-up"></span>
-              {{else}}
-              <span class="icon-arrow-down"></span>
-            {{/if}}
             {{emailLocalPart}}
-          </a>
-          {{#if userMenuOpen}}
-            <a class="js-logout btn-secondary">Logout</a>
-          {{/if}}
         </div>
       {{else}}
         <div class="btns-group">
@@ -24,12 +14,10 @@
       {{/if}}
 
       <div class="list-todos">
-        <a class="js-new-source link-list-new"><span class="icon-plus"></span>New Source</a>
-        <a class="list-todo" id="allSources" href="/">All News</a>
+        <a class="js-new-source link-list-new"><span class="icon-plus"></span>Find a {{thing}}</a>
+        <a class="list-todo" id="allSources" href="/">Profile</a>
+        <a class="list-todo js-logout">Logout</a>
 
-        {{#each sources}}
-          <a class="list-todo" id="{{ name }}">{{ name }}</a>
-        {{/each}}
 
       </div>
     </section>

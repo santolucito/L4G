@@ -48,16 +48,18 @@ Template.join.events({
       return;
     }
 
+    var profile = {role:role}
+    
     Accounts.createUser({
       email: email,
       password: password,
-      role: role
+      profile: profile,
     }, function(error) {
       if (error) {
         return Session.set(ERRORS_KEY, {'none': error.reason});
       }
 
-      Router.go('home');
+      Router.go('news');
     });
   }
 });
