@@ -1,10 +1,13 @@
 <template name="search">
 
-<div class="container-fluid" style="margin:10px">
   <div class="row">
 
+{{#if currentUser}}
   <h2>Search for a {{ofInterest}}, then reach out</h2>
+{{else}}
+  <h2>Choose signup or login on the left to get started</h2>
 
+{{/if}}
   {{#if isInvestor}}
   <ul>
     {{#each students}}
@@ -21,7 +24,6 @@
   </ul>
   {{/if}}
 
-</div>
 </div>
 </template>
 
