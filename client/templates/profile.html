@@ -1,7 +1,8 @@
 
 <template name="profile">
 
-  Username: {{this.profile.firstName}} {{this.profile.lastName}}
+  <h2> {{this.profile.firstName}} {{this.profile.lastName}}</h2>
+  <p> Majored in {{this.profile.major}} at {{this.profile.education}} </p>
 
 
 </template>
@@ -15,14 +16,14 @@
   </div>
 
   <div class="input-symbol">
-    <input type="email" name="email" placeholder="{{currentUser.profile.email}}" />
+    <input type="email" name="email" placeholder="email" />
     <span class="icon- glyphicon glyphicon-envelope" aria-hidden="true"></span>
   </div>
 </template>
 
 
 <template name="profileShort">
-<a href="profile">
+<a href="profile/{{this.profile.firstName}}">
   <li class="list-group-item">
     {{ this.profile.firstName }} from {{this.profile.education}}
   </li>

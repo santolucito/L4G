@@ -17,7 +17,7 @@
 
         {{#if currentUser}}
           <a class="list-todo" href="/">Find a {{ofInterest}}</a>
-          <a class="list-todo" href="/profile">Profile</a>
+          <a class="list-todo" href="/profile/{{currentUser.profile.firstName}}">Profile</a>
           <a class="list-todo js-logout">Logout</a>
         {{/if}}
         <a class="list-todo" href="/about">About</a>
