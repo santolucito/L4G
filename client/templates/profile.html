@@ -1,23 +1,32 @@
-<template name="profileFull">
+
+<template name="profile">
+
+  Username:
+  {{! this}}
+
+
+</template>
+
+<template name="profileEdit">
   <h3> You can edit your profile here</h3>
+  <div class="input-symbol">
+    <input type="text" name="firstName" placeholder="{{currentUser.profile.firstName}}" />
+    <span class="icon- glyphicon glyphicon-user" aria-hidden="true"></span>
+    <input type="text" name="lasttName" placeholder="{{currentUser.profile.lastName}}" />
+  </div>
 
-
-
-  {{#if isStudent}}
-
-  {{/if}}
-
-  {{#if isInvestor}}
-
-  {{/if}}
-
+  <div class="input-symbol">
+    <input type="email" name="email" placeholder="{{currentUser.profile.email}}" />
+    <span class="icon- glyphicon glyphicon-envelope" aria-hidden="true"></span>
+  </div>
 </template>
 
 
 <template name="profileShort">
-
+<a href="profile">
   <li class="list-group-item">
-    {{ this.profile.firstName }} needs money
+    {{ this.profile.firstName }} from {{this.profile.education}}
   </li>
+</a>
 
 </template>
