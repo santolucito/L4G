@@ -4961,8 +4961,7 @@ a.badge:focus {
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
-  margin-bottom: 30px;
-
+  margin-bottom: 30px ;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -6153,7 +6152,6 @@ button.close {
   padding: 8px 14px;
   margin: 0;
   font-size: 14px;
-  background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
 }

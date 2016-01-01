@@ -1,0 +1,39 @@
+<template name="appBody">
+  <div id="container" class="{{menuOpen}} {{cordova}}">
+
+    <section id="menu">
+      {{#if currentUser}}
+        <div class="btns-group-vertical">
+            {{emailLocalPart}}
+        </div>
+      {{else}}
+        <div class="btns-group">
+          <a href="{{pathFor 'signin'}}" class="btn-secondary">Sign In</a>
+          <a href="{{pathFor 'join'}}" class="btn-secondary">Join</a>
+        </div>
+      {{/if}}
+
+      <div class="list-todos">
+
+        {{#if currentUser}}
+          <a class="list-todo" href="/">Find a {{ofInterest}}</a>
+          <a class="list-todo" href="/profile">Profile</a>
+          <a class="list-todo js-logout">Logout</a>
+        {{/if}}
+        <a class="list-todo" href="/about">About</a>
+
+      </div>
+
+    </section>
+
+
+    <div class="content-overlay"></div>
+
+    <div id="content-container">
+      <span class="icon- glyphicon glyphicon-menu-right" aria-hidden="true" style="z-index:99"></span>
+      <div class="container-fluid" style="margin:10px">
+      {{> yield}}
+    </div>
+    </div>
+  </div>
+</template>

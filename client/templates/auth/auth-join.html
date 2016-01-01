@@ -24,22 +24,23 @@
 
           <div class="input-symbol  {{errorClass 'name'}}">
             <input type="text" name="firstName" placeholder="First Name" />
+            <span class="icon- glyphicon glyphicon-user" aria-hidden="true"></span>
             <input type="text" name="lasttName" placeholder="Last Name" />
           </div>
 
           <div class="input-symbol  {{errorClass 'email'}}">
             <input type="email" name="email" placeholder="Your Email" />
-            <span class="icon-email" title="Your Email"></span>
+            <span class="icon- glyphicon glyphicon-envelope" aria-hidden="true"></span>
           </div>
 
           <div class="input-symbol  {{errorClass 'password'}}">
             <input type="password" name="password" placeholder="Password" />
-            <span class="icon-lock" title="Password"></span>
+            <span class="icon- glyphicon glyphicon-lock" aria-hidden="true"></span>
           </div>
 
           <div class="input-symbol {{errorClass 'confirm'}}">
             <input type="password" name="confirm" placeholder="Confirm Password" />
-            <span class="icon-lock" title="Confirm Password"></span>
+            <span class="icon- glyphicon glyphicon-lock" aria-hidden="true"></span>
           </div>
 
           <div class="btn-group {{errorClass 'role'}}" id="roles" data-toggle="buttons">
@@ -51,13 +52,19 @@
             </label>
           </div>
 
+
+            <div class="input-symbol  {{errorClass 'edu'}}">
+              <input type="text" name="education" placeholder="Alma Mater" />
+              <span class="icon- glyphicon glyphicon-education" aria-hidden="true"></span>
+              <input type="text" name="major" placeholder="Major" />
+            </div>
+
           <button type="submit" class="btn-primary">Join Now</button>
         </form>
       </div>
     </div>
 
 
-      <a href="{{pathFor 'signin'}}" class="link-auth-alt">Have an account? Sign in</a>
     </div>
   </div>
 </template>
