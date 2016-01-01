@@ -12,9 +12,9 @@ mobile-experience
 standard-minifiers
 insecure
 less
-iron:router@0.9.4
 accounts-password
 jquery
 tracker
 check
 bootswatch:readable
+iron:router@1.0.12
