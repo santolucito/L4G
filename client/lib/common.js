@@ -1,17 +1,17 @@
 ofInterest = function() {
   if (isStudent()){
-    return 'Loan'
+    return INVESTOR
   }
   if (isInvestor()) {
-    return 'Student'
+    return STUDENT
   }
-  return 'Nothing'
+  return 'error'
 }
 
 isInvestor = function(){
-  return (Meteor.user().profile.role == 'investor')
+  return (Meteor.user().profile.role == INVESTOR)
 }
 
 isStudent = function(){
-  return (Meteor.user().profile.role == 'student')
+  return (Meteor.user().profile.role == STUDENT)
 }

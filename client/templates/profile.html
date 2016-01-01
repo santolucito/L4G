@@ -1,4 +1,4 @@
-<template name="profile">
+<template name="profileFull">
   <h3> You can edit your profile here</h3>
 
 
@@ -10,5 +10,14 @@
   {{#if isInvestor}}
 
   {{/if}}
+
+</template>
+
+
+<template name="profileShort">
+
+  <li class="list-group-item">
+    {{ this.profile.firstName }} needs money
+  </li>
 
 </template>

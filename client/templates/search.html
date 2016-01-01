@@ -9,33 +9,13 @@
   <h2>Choose signup or login on the left to get started</h2>
 
 {{/if}}
-  {{#if isInvestor}}
-  <ul>
-    {{#each students}}
-      {{> student }}
-    {{/each}}
-  </ul>
-  {{/if}}
 
-  {{#if isStudent}}
   <ul class="list-group">
-  {{#each investors}}
-    {{> investor }}
-  {{/each}}
+    {{#each peopleOfInterest}}
+      {{> profileShort }}
+    {{/each}}
+
   </ul>
-  {{/if}}
 
 </div>
-</template>
-
-<template name="student">
-  <li class="list-group-item">
-    {{ username }} needs money
-  </li>
-</template>
-
-<template name="investor">
-  <li class="list-group-item">
-    {{ username }} has money
-  </li>
 </template>

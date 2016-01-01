@@ -26,6 +26,9 @@ Template.join.events({
     if (roleButtons.length==1){
       role = roleButtons[0].id
     }
+    var education = template.$('[name=education]').val()
+    var major = template.$('[name=major]').val()
+
 
     var errors = {};
 
@@ -44,7 +47,7 @@ Template.join.events({
     if (role == '') {
       errors.role = 'Please select a role';
     }
-    if (!/^[a-zA-Z]*$/.test(firstName) && !/^[a-zA-Z]*$/.test(firstName)) {
+    if (!/^[a-zA-Z]*$/.test(firstName) && !/^[a-zA-Z]*$/.test(lasttName)) {
       errors.role = 'Please enter a name with characters from the set [a-zA-Z]';
     }
 
@@ -56,7 +59,9 @@ Template.join.events({
     var profile =
       {role:role
       ,firstName:firstName
-      ,lastName:lastName}
+      ,lastName:lastName
+      ,education:education
+      ,major:major}
 
     Accounts.createUser({
       email: email,

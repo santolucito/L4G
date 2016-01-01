@@ -4,9 +4,11 @@ Meteor.startup(function () {
 
 
   var profile =
-    {role:"student"
+    {role:STUDENT
     ,firstName:"Mark"
-    ,lastName:"Santolucito"}
+    ,lastName:"Santolucito"
+    ,education:"Amherst College"
+    ,major:"Computer Science"}
 
   Accounts.createUser({
     email: "mark@yale.edu",
@@ -15,14 +17,20 @@ Meteor.startup(function () {
   })
 
   var profile2 =
-    {role:"investor"
+    {role:INVESTOR
     ,firstName:"Fred"
-    ,lastName:"Shepard"}
+    ,lastName:"Shepard"
+    ,education:"Amherst College"
+    ,major:"Economics"}
 
   Accounts.createUser({
     email: "fred@amherst.edu",
     password: "fred",
     profile: profile2,
   })
+
+  console.log("DEBUG MODE: ADDED USERS");
+  console.log(profile);
+  console.log(profile2);
 }
 );
